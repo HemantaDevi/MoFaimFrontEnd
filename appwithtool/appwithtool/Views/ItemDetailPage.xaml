@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appwithtool.Views.ItemDetailPage" 
+             Title="{Binding Title}"
+             BackgroundColor="#008080">
+    <ContentPage.Resources>
+
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="#FBEA74" />
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="CornerRadius" Value="15" />
+            <Setter Property="HeightRequest" Value="150"/>
+            <Setter Property="WidthRequest" Value="120"/>
+            <Setter Property="Padding" Value="5" />
+        </Style>
+
+        <Style x:Key="test" TargetType="Frame">
+            <Setter Property="HeightRequest" Value="10"/>
+        </Style>
+
+        <Style x:Key="headerLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="9" />
+            <Setter Property="TextColor" Value="Blue"/>
+        </Style>
+
+        <Style x:Key="textLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="7" />
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Image">
+            <Setter Property="FlexLayout.Order" Value="-1" />
+            <Setter Property="FlexLayout.AlignSelf" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <ScrollView>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="77"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0"  Grid.ColumnSpan="2" Grid.RowSpan="2" Source="kimchi1" HorizontalOptions="FillAndExpand"/>
+
+                <Frame BackgroundColor="#BF043055" HasShadow="True" Grid.Row="1" Grid.ColumnSpan="2"  Style="{StaticResource test}" >
+                    <StackLayout Orientation="Vertical" Spacing="10">
+                        <Label Text="{Binding Item.Location}" FontSize="15" TextColor="White"  />
+                        <Label Text="{Binding Item.DescriptionDetail}" FontSize="7" TextColor="White" />
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout Grid.Row="2" Orientation="Horizontal" Margin="0" Padding="0" HorizontalOptions="FillAndExpand">
+                    
+
+
+                </StackLayout>
+
+                <ScrollView Grid.Row="3" Grid.ColumnSpan="2"  Orientation="Horizontal">
+                    <FlexLayout>
+                        <Frame>
+
+                            <FlexLayout Direction="Column">
+                                <Label Text="Sour Dough Burger"
+                                   Style="{StaticResource headerLabel}"  HeightRequest="25"/>
+                                <Label Text="SOURDOUGH KING™ burger features more than 1/2 lbs." 
+                                        Style="{StaticResource textLabel}" HeightRequest="30"/>
+                                <Label Text="  &#x2022;  melted American cheese" 
+                                        Style="{StaticResource textLabel}" HeightRequest="20"/>
+                                <Label Text="  &#x2022; thick cut bacon" 
+                                        Style="{StaticResource textLabel}" HeightRequest="20"/>
+                                <Label Text="  &#x2022; freshly sliced onions and our creamy.." 
+                                        Style="{StaticResource textLabel}" HeightRequest="20"/>
+                                <Image Source="burger.jpg"
+                                       Aspect="AspectFill"
+                                       HeightRequest="80"
+                                       WidthRequest="80"/>
+
+                                <Label FlexLayout.Grow="1" />
+
+                            </FlexLayout>
+                        </Frame>
+
+                        <Frame>
+
+                            <FlexLayout Direction="Column">
+                                <Label Text="Whooper Sandwich"
+                                   Style="{StaticResource headerLabel}" HeightRequest="25"/>
+                                <Label Text=" savory flame-grilled beef topped with juicy tomatoes" 
+                                       Style="{StaticResource textLabel}" HeightRequest="30"/>
+                                <Label Text="  &#x2022; fresh lettuce, creamy mayonnaise, ketchup" 
+                                        Style="{StaticResource textLabel}" HeightRequest="20"/>
+                                <Label Text="  &#x2022;  crunchy pickles, and sliced white onions.." 
+                                        Style="{StaticResource textLabel}" HeightRequest="20"/>
+                                <Image Source="burger2.jpg"
+                                   WidthRequest="80"
+                                   HeightRequest="80" />
+                                <Label FlexLayout.Grow="1" />
+
+                            </FlexLayout>
+                        </Frame>
+
+                        <Frame>
+
+                            <FlexLayout Direction="Column">
+                                <Label Text="Combo Burger"
+                                            Style="{StaticResource headerLabel}" HeightRequest="25"/>
+                                <Label Text="All seasoned burger with beef" 
+                                       Style="{StaticResource textLabel}" HeightRequest="30"/>
+                                <Label Text="  &#x2022; Ever ready to serve you."
+                                        Style="{StaticResource textLabel}" HeightRequest="20"/>
+                                <Label Text="  &#x2022; Varieties of speciality with the burgers" 
+                                        Style="{StaticResource textLabel}" HeightRequest="20"/>
+                                <Label Text="  &#x2022; You ask for it again" 
+                                        Style="{StaticResource textLabel}" HeightRequest="20"/>
+                                <Image Source="kimchi2.jpg"
+                                           WidthRequest="80"
+                                           HeightRequest="80" />
+                                <Label FlexLayout.Grow="1" />
+                            </FlexLayout>
+                        </Frame>
+                    </FlexLayout>
+                </ScrollView>
+            </Grid>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

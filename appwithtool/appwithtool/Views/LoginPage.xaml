@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             xmlns:views="clr-namespace:appwithtool.Views"
+             x:Class="appwithtool.Views.LoginPage"
+             BackgroundImage="splash.jpg">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Padding="30" Spacing="20">
+                <BoxView HeightRequest="10"/>
+              
+                <Frame BackgroundColor="#008080" HasShadow="True">
+                    <Label TextColor="#8D0D4B" FontSize = "20" Text="MO FAIM" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                </Frame>
+                <Frame BackgroundColor="#BF043055" HasShadow="True">
+                    <StackLayout Orientation="Vertical" Spacing="10">
+                        <Entry x:Name="Email" Text="{Binding Email}" Placeholder="Enter Email"   
+                           PlaceholderColor="White" HeightRequest="40"   
+                           Keyboard="Email"  
+                           TextColor="White"/>
+
+                        <Entry x:Name="Password" Text="{Binding Password}" Placeholder="Enter Password"   
+                           PlaceholderColor="White" HeightRequest="40"   
+                           IsPassword="True"  
+                           TextColor="White"/>
+                    </StackLayout>
+                </Frame>
+                <Button Command="{Binding SubmitCommand}" Text="Login" TextColor="#8D0D4B"
+                    FontAttributes="Bold" FontSize="Medium" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#008080" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>  

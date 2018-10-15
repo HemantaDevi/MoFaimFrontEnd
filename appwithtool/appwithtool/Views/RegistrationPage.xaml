@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+            xmlns:views="clr-namespace:appwithtool.Views"
+             x:Class="appwithtool.Views.RegistrationPage"  
+             BackgroundImage="splash.jpg">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Padding="10" Spacing="10">
+                <BoxView HeightRequest="10"/>
+                <!--<Image HorizontalOptions="Center" WidthRequest="300" Source="cover.jpg"/>-->
+                <Frame BackgroundColor="#008080" HasShadow="True">
+                    <Label TextColor="#8D0D4B" FontSize = "15" Text="Registration Page" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                </Frame>
+                <Frame BackgroundColor="#BF043055" HasShadow="True">
+                    <StackLayout Orientation="Vertical" Spacing="5">
+                        <Entry x:Name="Name" Text="{Binding Name}" Placeholder="Name"   
+                           PlaceholderColor="White" HeightRequest="35" FontSize="Small"
+                           TextColor="White"/>
+
+                        <Entry x:Name="PhoneNumber" Text="{Binding PhoneNumber}" Placeholder="Phone Number"   
+                           PlaceholderColor="White" HeightRequest="35"  FontSize="Small"
+                           TextColor="White"/>
+
+                        <Entry x:Name="Email" Text="{Binding Email}" Placeholder="Email"   
+                           PlaceholderColor="White" HeightRequest="35" FontSize="Small"
+                           TextColor="White"
+                           Keyboard="Email"/>
+
+                        <Entry x:Name="Password" Text="{Binding Password}" Placeholder="Password"   
+                           PlaceholderColor="White" HeightRequest="35"   FontSize="Small" 
+                           IsPassword="True"  
+                           TextColor="White"/>
+
+                        <Entry x:Name="ConfirmPassword" Text="{Binding ConfirmPassword}" Placeholder="Confirm Password"   
+                           PlaceholderColor="White" HeightRequest="35"   FontSize="Small" 
+                           IsPassword="True"  
+                           TextColor="White"/>
+                    </StackLayout>
+                </Frame>
+                <Button Command="{Binding SubmitCommand}" Text="Register" TextColor="#8D0D4B"
+                    FontAttributes="Bold" FontSize="10" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#008080" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>  
